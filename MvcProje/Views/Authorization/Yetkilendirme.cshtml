@@ -1,0 +1,59 @@
+﻿@model IEnumerable<EntityLayer.Concrete.Admin>
+@{
+    ViewBag.Title = "Yetkilendirme";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Yetkilendirme</h2>
+<br />
+<table class=" table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>AD</th>
+        <th>Şifre</th>
+        <th>Yetki</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.AdminID</td>
+            <td>@x.UserName</td>
+            <td>@x.Password</td>
+            <td>@x.AdminRole</td>
+            <td><a href="/Authorization/AdminSil/@x.AdminID" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Authorization/UpdateAdmin/@x.AdminID" class="btn btn-warning">Güncelle</a></td>
+        </tr>
+    }
+</table>
+<br />
+<button class="btn btn-primary" data-toggle="modal" data-target="#Modal1">Yeni Admin Ekle</button>
+<div class="modal" id="Modal1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Yeni Admin Ekleme Paneli</h2>
+            </div>
+            <form method="post" action="/Authorization/AdminAdd/">
+                <div class="modal-body">
+                    <label>Admin Adı</label>
+                    <input type="text" name="UserName" class="form-control" />
+                    <br />
+                    <label>Admin Şifresi</label>
+                    <input type="text" name="Password" class="form-control" />
+                    <br />
+                    <label>Admin Rolu</label>
+                    <select style="height:40px; width:465px; text-align:center; border-radius:5px; border:1px solid gray;" name="AdminRole">
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                    </select>
+                    <br />
+                    <br />
+                    <button class="btn btn-warning">Admin Ekle</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

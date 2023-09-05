@@ -1,0 +1,106 @@
+﻿
+@{
+    ViewBag.Title = "BlogDetails";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Mini Blog</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Muli:300,400,700|Playfair+Display:400,700,900" rel="stylesheet">
+
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+    <link rel="stylesheet" href="css/aos.css">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="site-wrap">
+        @Html.Action("BlogCover", "Blog")
+
+        <section class="site-section py-lg">
+            <div class="container">
+
+                <div class="row blog-entries element-animate" style="margin-top: -20px;">
+
+                    <div class="col-md-12 col-lg-8 main-content">
+
+                        @Html.Action("BlogReadAll", "Blog")
+
+                        @Html.Action("CommentList", "Comment")
+                    </div>
+
+                    <!-- END main-content -->
+                    <div class="col-md-12 col-lg-4 sidebar" style="margin-top: -46px;">
+                        <div class="sidebar-box search-form-wrap">
+                            <form action="#" class="search-form">
+                                <div class="form-group">
+                                    <span class="icon fa fa-search"></span>
+                                    <input type="text" class="form-control" id="s" placeholder="Type a keyword and hit enter">
+                                </div>
+                            </form>
+                        </div>
+                        <!-- END sidebar-box -->
+                        <br />
+                        @Html.Action("AuthorAbout", "Author")
+                        <!-- END sidebar-box -->
+                        @Html.Action("AuthorPopularPost", "Author")
+                        <!-- END sidebar-box -->
+                        @Html.Action("BlogDetailsCategoryList", "Category")
+                        <!-- END sidebar-box -->
+
+                        <div class="sidebar-box">
+                            <h3 class="heading">Tags</h3>
+                            <ul class="tags">
+                                <li><a href="#">Travel</a></li>
+                                <li><a href="#">Adventure</a></li>
+                                <li><a href="#">Food</a></li>
+                                <li><a href="#">Lifestyle</a></li>
+                                <li><a href="#">Business</a></li>
+                                <li><a href="#">Freelancing</a></li>
+                                <li><a href="#">Travel</a></li>
+                                <li><a href="#">Adventure</a></li>
+                                <li><a href="#">Food</a></li>
+                                <li><a href="#">Lifestyle</a></li>
+                                <li><a href="#">Business</a></li>
+                                <li><a href="#">Freelancing</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- END sidebar -->
+
+                </div>
+            </div>
+        </section>
+
+        <div class="site-section bg-light">
+            @Html.Action("OtherFeaturedPost", "Blog")
+
+
+        </div>
+
+
+        <div class="site-section bg-lightx">
+            @Html.Action("AddMail", "MailSubscribe")
+        </div>
+
+
+        <div class="site-footer" style="padding:0;">
+            @Html.Action("Footer", "About")
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+﻿@model EntityLayer.Concrete.Comment
+
+<div class="pt-5">
+    <h3 class="mb-5">Bu Posta Yapılan Yorumlar</h3>
+    @if (Model != null)
+    {
+        <ul class="comment-list">
+            <li class="comment">
+
+                <div class="vcard">
+                    <img src="/miniblog/images/1.png" alt="Image placeholder">
+                </div>
+
+                <div class="comment-body">
+                    <h3>@Model.UserName</h3>
+                    <div class="meta">@(((DateTime)Model.CommentDate).ToString("dd-MMM-yyyy"))</div>
+                    <p>@Model.CommentText</p>
+                </div>
+
+
+            </li>
+
+        </ul>
+    }
+    <!-- END comment-list -->
+    @Html.Action("LeaveComment", "Comment")
+</div>
+
