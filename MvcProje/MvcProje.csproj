@@ -167,7 +167,6 @@
     <Content Include="AdminLTE-3.0.4\.gitignore" />
     <Content Include="AdminLTE-3.0.4\build\config\postcss.config.js" />
     <Content Include="AdminLTE-3.0.4\build\config\rollup.config.js" />
-    <Content Include="AdminLTE-3.0.4\build\js\a.js" />
     <Content Include="AdminLTE-3.0.4\build\js\AdminLTE.js" />
     <Content Include="AdminLTE-3.0.4\build\js\CardRefresh.js" />
     <Content Include="AdminLTE-3.0.4\build\js\CardWidget.js" />
