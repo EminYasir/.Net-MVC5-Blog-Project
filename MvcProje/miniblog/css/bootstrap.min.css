@@ -7831,6 +7831,9 @@ a.bg-dark:focus, a.bg-dark:hover, button.bg-dark:focus, button.bg-dark:hover {
     .float-sm-right {
         float: right !important
     }
+    .col-md-4.grup{
+        margin-bottom:30px;
+    }
 
     .float-sm-none {
         float: none !important
@@ -8267,6 +8270,10 @@ a.bg-dark:focus, a.bg-dark:hover, button.bg-dark:focus, button.bg-dark:hover {
 
 .mb-auto, .my-auto {
     margin-bottom: auto !important
+}
+
+.col-md-4.grup{
+    margin-bottom:30px;
 }
 
 .ml-auto, .mx-auto {
