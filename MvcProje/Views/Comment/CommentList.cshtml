@@ -4,7 +4,7 @@
     <h3 class="mb-5">Bu Posta Yapılan Yorumlar</h3>
     @foreach (var item in Model)
     {
-        if (item != null)
+        if (item != null && item.CommentStatus==true)
         {
             <ul class="comment-list">
                 <li class="comment">
