@@ -582,8 +582,7 @@ pre {
     width: 100%;
     min-height: 1px;
     padding-right: 15px;
-    padding-left: 15px;
-    margin-bottom:30px;
+    padding-left: 15px
 }
 
 .col {
@@ -9370,6 +9369,9 @@ a.bg-dark:focus, a.bg-dark:hover, button.bg-dark:focus, button.bg-dark:hover {
 @media (min-width:768px) {
     .text-md-left {
         text-align: left !important
+    }
+    .grup{
+        margin-bottom:30px;
     }
 
     .text-md-right {
