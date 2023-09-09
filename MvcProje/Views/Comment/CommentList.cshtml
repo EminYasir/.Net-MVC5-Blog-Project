@@ -1,26 +1,29 @@
-﻿@model EntityLayer.Concrete.Comment
+﻿@model IEnumerable<EntityLayer.Concrete.Comment>
 
 <div class="pt-5">
     <h3 class="mb-5">Bu Posta Yapılan Yorumlar</h3>
-    @if (Model != null)
+    @foreach (var item in Model)
     {
-        <ul class="comment-list">
-            <li class="comment">
+        if (item != null)
+        {
+            <ul class="comment-list">
+                <li class="comment">
 
-                <div class="vcard">
-                    <img src="/miniblog/images/1.png" alt="Image placeholder">
-                </div>
+                    <div class="vcard">
+                        <img src="/miniblog/images/1.png" alt="Image placeholder">
+                    </div>
 
-                <div class="comment-body">
-                    <h3>@Model.UserName</h3>
-                    <div class="meta">@(((DateTime)Model.CommentDate).ToString("dd-MMM-yyyy"))</div>
-                    <p>@Model.CommentText</p>
-                </div>
+                    <div class="comment-body">
+                        <h3>@item.UserName</h3>
+                        <div class="meta">@(((DateTime)item.CommentDate).ToString("dd-MMM-yyyy"))</div>
+                        <p>@item.CommentText</p>
+                    </div>
 
 
-            </li>
+                </li>
 
-        </ul>
+            </ul>
+        }
     }
     <!-- END comment-list -->
     @Html.Action("LeaveComment", "Comment")

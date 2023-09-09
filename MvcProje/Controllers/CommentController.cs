@@ -16,7 +16,7 @@ namespace MvcProje.Controllers
         [AllowAnonymous]
         public PartialViewResult CommentList(int id)
         {
-            var comment = cm.GetById(id);
+            var comment = cm.GetByIdList(id);
             return PartialView(comment);
         }
         [AllowAnonymous]
